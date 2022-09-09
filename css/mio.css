@@ -25,7 +25,9 @@
     transition: 2s;
 }
 .ex-3-square:hover{
-    border-radius: 50%;
+    border-radius: 50%;             
+    transform: rotateY(180deg);  /* BONUS */
+    background-color: #1b3c59;
 }
 
 .ex-4-square {
