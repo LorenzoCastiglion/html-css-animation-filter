@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: pomidor;
+    src: url(../font/Pomidor.otf);
+}
+
+
 /* main */
 
 main{
@@ -13,16 +19,19 @@ main{
     position: relative;
 }
 
-.schermo{
-    width: 100%;
-    height: 50%;
-    margin: auto 0;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
+@keyframes rotate {
+    0%{ 
+        transform-origin: center;
+        transform: rotate(360deg);
+    }
+    100%{
+        transform-origin: center;
+        transform: rotate(0deg);
+    }
+ }
+
+
 @keyframes fall {
     0%{
         
@@ -38,35 +47,142 @@ main{
 }
 
 .schermo{
+    width: 100%;
+    height: 50%;
+    margin: auto 0;
+    /* background-color: black; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
+    z-index: 2;
+}
+
+
+
+.schermo-center{
+    display: flex;
+    /* flex-flow: column; */
+    justify-content: center;
+    z-index: 2;
+
+}
+
+.schermo-right{
+    display: flex;
+    /* flex-flow: column; */
+    justify-content: end;
+    z-index: 2;
+
+}
+
+#txt{
+    color: rgb(182, 0, 36);
+    font-family: pomidor;
+    font-size: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
 }
 
 .rosa{
-   background-position: 0px -165px;
-   background-repeat: no-repeat;
-    width: 10%;
-    height: 100%;
-    background-size: contain;
-    animation: fall 3s ease-in-out 2s infinite ;
+    margin: 20px;
+    margin-top: 18%;
+    width: 100px;
+    height: 100px;  
+    /* background-color: red; */
+    animation: rotate 3s linear 2s infinite;
     background-image: url("../img/STYT_Kurohana_013\ \ \ .png");
-} 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
 .glicine{
-    
+    margin: 20px;
+    margin-bottom: 20%;
+    width: 300px;
+    height: 300px;  
+    /* background-color: red; */
+    animation: rotate 3s ease 2s infinite;
+    background-image: url("../img/STYT_Kurohana_015\ \ \ .png");
+    background-size: contain;
     background-repeat: no-repeat;
-     width: 30%;
-     height: 100%;
-     background-size: contain;
-     animation: rotate 5s  1s infinite ;
-     background-image: url("../img/STYT_Kurohana_015\ \ \ .png");
- } 
- @keyframes rotate {
-    0%{ 
-        transform-origin: 0px 0px;
-        transform: rotate(360deg);
+    
+}
+
+.bulbo{
+
+    margin-top: 300px;
+   
+    width: 200px;
+    height: 200px;  
+    animation: rotate 3s linear infinite reverse ;
+    background-image: url("../img/STYT_Kurohana_027\ \ \ .png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.yellow{
+    margin: 20px;
+    margin-top: 415px;
+    width: 300px;
+    height: 300px;  
+    /* background-color: red; */
+    animation: rotate 1s linear  infinite;
+    background-image: url("../img/STYT_Kurohana_012\ \ \ .png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.blu{
+    
+    width: 300px;
+    height: 300px;  
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    animation: rock 3s ease 2s infinite;
+    background-image: url("../img/STYT_Kurohana_035\ \ \ .png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 55%;
+    right: 15%;
+}
+
+@keyframes rock {
+
+    0%{
+        transform-origin: top center;
+        transform: rotate(30deg);
     }
-    100%{
-        transform-origin: center;
+
+    50%{
+        transform-origin:  top center;
         transform: rotate(0deg);
     }
- }
+
+    100%{
+        transform-origin:  top center;
+        transform: rotate(30deg);
+    }
+    
+}
+
+.black{
+     width: 300px;
+    height: 300px;  
+    background-image: url("../img/STYT_Kurohana_011\ \ \ .png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    animation: rotate 3s linear infinite reverse ;
+    z-index: 10;
+
+}

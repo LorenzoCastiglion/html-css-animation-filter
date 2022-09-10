@@ -242,3 +242,19 @@
         right: 20%;
     }
 }
+
+
+.btn{
+    
+    background-color: #1b3c59;
+    text-align: center;
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    float: none;
+}
+
+a{
+    color: white;
+}
